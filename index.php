@@ -2,7 +2,7 @@
   session_start();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $calctinhtoan = preg_replace('/[^0-9\+\-\*\/\.]/', '', $_POST['display'] ?? '');
-      $_SESSION['result'] = $calctinhtoan?@eval("return $calctinhtoan;") : "0";
+      $_SESSION['result'] = $calctinhtoan ? @eval("return $calctinhtoan;") : "0";
       header("Location: " . $_SERVER['PHP_SELF']);
       exit();
   }
